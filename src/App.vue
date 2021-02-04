@@ -88,8 +88,8 @@ export default {
     addNewTodo(selectedMonth, newTodoData){
       for (let i = 0; i < this.months.length; i++) {
         if (i == selectedMonth) {
-          localStorage.setItem(newTodoData, newTodoData)
-          this.months[i].todoList.push(newTodoData);
+          localStorage.setItem(selectedMonth, newTodoData)
+          this.months[i-1].todoList.push(newTodoData);
         }
       }
     }
@@ -98,7 +98,8 @@ export default {
     if (localStorage.length > 0) {
       for (let i = 0; i < localStorage.length; i++) {
         if (localStorage.key(i) !== 'loglevel:webpack-dev-server') {
-          this.months[i].todoList.push(localStorage.key(i));
+          console.log(localStorage.getItem(5));
+          // this.months[i].todoList.push(localStorage.);
         }
       }
     }

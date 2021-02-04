@@ -15,15 +15,10 @@
     export default {
         data(){
             return {
+                checked: false
             }
         },
         props: ['propmonth'],
-        computed: {
-            checked() {
-                return this.item === this.value;
-            },
-        },
-        
     }
 </script>
 
