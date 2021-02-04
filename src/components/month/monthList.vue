@@ -1,10 +1,10 @@
 <template>
     <div>
         <ul>
-            <li v-for="month in propmonth" :key="month.id">
+            <li v-for="(item, index) in propmonth" :key="index" :class="{checked: checked}">
                 <label>
-                    <input type="checkbox">
-                    <span>{{ month }}</span>
+                    <input type="checkbox" :checked="checked" :value="item">
+                    <span>{{ item }}</span>
                 </label>
             </li>
         </ul>
@@ -13,7 +13,16 @@
 
 <script>
     export default {
+        data(){
+            return {
+            }
+        },
         props: ['propmonth'],
+        computed: {
+            checked() {
+                return this.item === this.value;
+            },
+        },
         
     }
 </script>
@@ -24,8 +33,25 @@ ul {
         border-radius: 5px;
         padding: 5px;
         background: #efefef;
+        transition: all .3s ease-in;
         & + li {
             margin: 10px 0 0;
+        }
+        &.checked {
+            background: cornflowerblue;
+            color: #fff;
+        }
+        label {
+            position: relative;
+            input {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                opacity: 0;
+            }
         }
     }
 }
