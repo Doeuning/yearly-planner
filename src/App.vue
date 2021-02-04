@@ -24,31 +24,31 @@ export default {
       months: [
         {
           id: 1,
-          todoList: []
+          todoList: ['1월의 할일']
         },
         {
           id: 2,
-          todoList: []
+          todoList: ['2월의 할일']
         },
         {
           id: 3,
-          todoList: []
+          todoList: ['3월의 할일']
         },
         {
           id: 4,
-          todoList: []
+          todoList: ['4월의 할일']
         },
         {
           id: 5,
-          todoList: []
+          todoList: ['5월의 할일']
         },
         {
           id: 6,
-          todoList: []
+          todoList: ['6월의 할일']
         },
         {
           id: 7,
-          todoList: []
+          todoList: ['7월의 할일']
         },
         {
           id: 8,
@@ -86,7 +86,7 @@ export default {
       this.modal = false;
     },
     addNewTodo(selectedMonth, newTodoData){
-      for (let i = 1; i <= this.months.length; i++) {
+      for (let i = 0; i < this.months.length; i++) {
         if (i == selectedMonth) {
           localStorage.setItem(newTodoData, newTodoData)
           this.months[i].todoList.push(newTodoData);

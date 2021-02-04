@@ -33,6 +33,7 @@
             addNewTodo(){
                 if (this.newTodoData !== '') {
                     this.$emit('addNewTodo', this.selectedMonth, this.newTodoData)
+                    this.newTodoData = '';
                 } else {
                     alert('할 일을 입력해 주세요.');
                 }

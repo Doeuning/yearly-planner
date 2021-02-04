@@ -4,7 +4,7 @@
             <li v-for="month in propmonth" :key="month.id">
                 <label>
                     <input type="checkbox">
-                    <span>{{ month.todoList }}</span>
+                    <span>{{ month }}</span>
                 </label>
             </li>
         </ul>

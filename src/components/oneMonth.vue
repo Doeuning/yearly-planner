@@ -1,7 +1,7 @@
 <template>
     <div class="month-box">
         <month-header class="header" :propmonth="propmonth"></month-header>
-        <month-list></month-list>
+        <month-list :propmonth="propmonth.todoList"></month-list>
         <month-gage></month-gage>
     </div>
 </template>
