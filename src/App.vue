@@ -86,20 +86,32 @@ export default {
       this.modal = false;
     },
     addNewTodo(selectedMonth, newTodoData){
-      for (let i = 0; i < this.months.length; i++) {
-        if (i == selectedMonth) {
-          localStorage.setItem(selectedMonth, newTodoData)
-          this.months[i-1].todoList.push(newTodoData);
-        }
-      }
+      let todoArray = [];
+      todoArray.push(JSON.parse(newTodoData));
+      console.log(todoArray, selectedMonth, newTodoData);
+      // localStorage.setItem(selectedMonth, JSON.stringify(todoArray));
+      // for (let i = 0; i < this.months.length; i++) {
+      //   if (i == selectedMonth) {
+      //     let todoArray = [];
+      //     if (localStorage.getItem(i) !== '') {
+      //       todoArray.push(JSON.parse(newTodoData));
+      //       localStorage.setItem(selectedMonth, JSON.stringify(todoArray));
+      //       this.months[i].todoList.push(newTodoData);
+      //     }
+      //   }
+      // }
     }
   },
   created() {
     if (localStorage.length > 0) {
       for (let i = 0; i < localStorage.length; i++) {
         if (localStorage.key(i) !== 'loglevel:webpack-dev-server') {
-          console.log(localStorage.getItem(5));
-          // this.months[i].todoList.push(localStorage.);
+          // let originArray = [];
+          // if (localStorage.getItem(i) !== '') {
+          //   originArray.push(JSON.parse(localStorage.getItem(i)));
+          //   localStorage.setItem(i, JSON.stringify(originArray));
+          //   this.months[i].todoList.push(localStorage.getItem(i));
+          // }
         }
       }
     }

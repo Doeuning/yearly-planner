@@ -17,6 +17,7 @@
     position: relative;
     width: 10px;
     height: 100%;
+    margin: 0 0 0 25px;
     border-radius: 5px;
     background: #efefef;
     .bar {
